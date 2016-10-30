@@ -3,11 +3,8 @@
 # You need a unit test framework such as Pester to run PowerShell Unit tests. 
 # You can download Pester from http://go.microsoft.com/fwlink/?LinkID=534084
 #
-
-Describe "Get-Function" {
-	Context "Function Exists" {
-		It "Should Return" {
-		
-		}
-	}
-}
+cls
+Get-Command Get-HistoryMore | Remove-Module
+Import-Module E:\Scripts\Ps\Get-HistoryMore\Get-HistoryMore\Get-HistoryMore.psm1
+Get-HistoryMore -ID 2
+#get-help Get-HistoryMore -Full
