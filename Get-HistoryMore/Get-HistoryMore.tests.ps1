@@ -6,5 +6,6 @@
 cls
 Get-Command Get-HistoryMore | Remove-Module
 Import-Module E:\Scripts\Ps\Get-HistoryMore\Get-HistoryMore\Get-HistoryMore.psm1
-Get-HistoryMore -ID 2
+Get-Date
+Get-HistoryMore
 #get-help Get-HistoryMore -Full
