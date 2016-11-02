@@ -20,8 +20,8 @@ function Get-HistoryMore
 	)
 	
 	# 获取记录历史文件路径
-#	$HistoryPath = (Get-PSReadlineOption).HistorySavePath
-	$MyHistoryPath = "D:\cmder_mini\config\PSHistory\MyPSHistory"
+	$MyHistoryPath = (Get-PSReadlineOption).HistorySavePath
+	#$MyHistoryPath = "D:\cmder_mini\config\PSHistory\MyPSHistory"
 	$HistoryFile = Get-Content -Encoding UTF8 -Path $MyHistoryPath
 
 	# 将文件内容赋给数组并且加上行号
