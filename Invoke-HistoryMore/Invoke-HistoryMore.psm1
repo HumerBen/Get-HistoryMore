@@ -14,11 +14,11 @@ function Invoke-HistoryMore
 		[Int]$Id
 	)
 	#Write-Host $Id
-	# 获取记录历史文件路径
+	# 鑾峰彇璁板綍鍘嗗彶鏂囦欢璺緞
 	$MyHistoryPath = (Get-PSReadlineOption).HistorySavePath
 	#$MyHistoryPath = "D:\cmder_mini\config\PSHistory\MyPSHistory"
 	$HistoryFile = Get-Content -Encoding UTF8 -Path $MyHistoryPath
 	
-	# 执行所选的命令
+	# 鎵ц鎵�閫夌殑鍛戒护
 	Invoke-Expression $HistoryFile[$Id-1]
 }

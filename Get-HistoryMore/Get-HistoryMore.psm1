@@ -19,12 +19,12 @@ function Get-HistoryMore
 		[Int]$Id
 	)
 	
-	# »ñÈ¡¼ÇÂ¼ÀúÊ·ÎÄ¼şÂ·¾¶
+	# è·å–è®°å½•å†å²æ–‡ä»¶è·¯å¾„
 	$MyHistoryPath = (Get-PSReadlineOption).HistorySavePath
 	#$MyHistoryPath = "D:\cmder_mini\config\PSHistory\MyPSHistory"
 	$HistoryFile = Get-Content -Encoding UTF8 -Path $MyHistoryPath
 
-	# ½«ÎÄ¼şÄÚÈİ¸³¸øÊı×é²¢ÇÒ¼ÓÉÏĞĞºÅ
+	# å°†æ–‡ä»¶å†…å®¹èµ‹ç»™æ•°ç»„å¹¶ä¸”åŠ ä¸Šè¡Œå·
 	$Counter = 1
 	$HistoryCommandArray = @()
 
@@ -34,15 +34,15 @@ function Get-HistoryMore
 		$Counter += 1
 	}
 	
-	# ÅĞ¶ÏId²ÎÊıÊÇ·ñÎª¿Õ
+	# åˆ¤æ–­Idå‚æ•°æ˜¯å¦ä¸ºç©º
 	if ($Id)
 	{
-		# Èç¹ûÓĞId²ÎÊıÊ±
+		# å¦‚æœæœ‰Idå‚æ•°æ—¶
 		Write-Host $HistoryCommandArray[$Id-1]
 	}
 	else
 	{
-		# Èç¹ûÃ»ÓĞId²ÎÊıÊ±½«Êı×éÄÚÈİÄæÏò²¢·ÖÒ³ÏÔÊ¾
+		# å¦‚æœæ²¡æœ‰Idå‚æ•°æ—¶å°†æ•°ç»„å†…å®¹é€†å‘å¹¶åˆ†é¡µæ˜¾ç¤º
 		$HistoryCommandArrayReverse = @()
 		for ( $i = $HistoryCommandArray.Length ; $i -ge 1 ; $i -= 1 )
 		{
@@ -50,7 +50,7 @@ function Get-HistoryMore
 			$HistoryCommandArrayReverse += $HistoryCommandArray[$i]
 		}
 
-		# ÏÔÊ¾ÃüÁî
+		# æ˜¾ç¤ºå‘½ä»¤
 		$HistoryCommandArrayReverse | Out-Host -Paging
 	}
 	
